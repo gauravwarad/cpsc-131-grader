@@ -1,0 +1,61 @@
+open work folder
+filehandling.py
+process foder():
+    iterate through all files
+        student name = ""
+        if zip file:
+            get student name from file name
+            extract
+            process folder()
+        if .cpp:
+            if filename has student name:
+                get student name from file name
+            validate() -- am i supposed to execute this file?
+            grade-driver()
+            comment()
+        if any other file:
+            ignore
+
+filehandling.py
+validate():
+    filename.split(_)
+    if filename endswith is in to_execute set
+    return True
+
+helper.py
+set_files_to_execute()
+    get this from input later
+    to_execute = {GroceryList.cpp}
+
+grader.py
+grade-driver()
+    initialize comment (with student and file name)
+    1. create /temp and place c++ development root inside it
+    2. copy solution to sourcecode
+    3. find startline, endline of todo in temp:
+        search for same todo in student file -- get sstartline, sendline
+        if not present: break
+        todo solution = content in lines in solution (cut)
+        student todo = content in their lines
+        solution.insert(student todo at the startline)
+        run and grade -- store result in comment & a logger file
+        remove the student code from solution
+        solution.insert(todo solution)
+        onto the next todo
+    4. save comment to an output file
+    5. exit
+
+grader.py
+run and grade():
+    cd to /temp/c++ development root/sourcecode/
+    run command ..build.sh 
+    copy output to logger file
+    if errors are present:
+        score = 0
+    else:
+        score = 5
+    return score
+
+main.py
+    function call
+    input
